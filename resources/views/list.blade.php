@@ -38,6 +38,7 @@
 				@else
 					<p>Нет статей</p>
 				@endif
+				{{ $posts->links() }}
                 </div>
             </div>
         </div>

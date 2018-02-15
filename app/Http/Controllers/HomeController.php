@@ -32,7 +32,8 @@ class HomeController extends Controller
     
     public function listposts()
     {
-    	$posts = Post::orderBy('updated_at','desc')->get();
+    	$posts = Post::orderBy('updated_at','desc')->paginate(3);
+    	//$posts = Post::orderBy('updated_at','desc')->get();
         return view('list',['posts' => $posts]);
     }
     
