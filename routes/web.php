@@ -21,8 +21,8 @@ Auth::routes();
 Route::get('/', 'HomeController@listposts')->name('listposts');
 Route::get('/new', 'HomeController@newpost')->name('newpost')->middleware('auth');;
 Route::post('/new', 'HomeController@createpost')->middleware('auth');;
-Route::get('/edit/{id}', 'HomeController@editpost')->middleware('auth');
-Route::post('/edit/{id}', 'HomeController@commitpost')->middleware('auth');
+Route::get('/edit/{param}', 'HomeController@editpost')->middleware('auth');
+Route::post('/edit/{param}', 'HomeController@commitpost')->middleware('auth');
 Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
     return $captcha->src($config);
 });

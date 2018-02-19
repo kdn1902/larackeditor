@@ -42,15 +42,17 @@ class HomeController extends Controller
    	  	  return redirect()->route('listposts');
     }
     
-    public function editpost(Request $request, $id)
+    public function editpost(Request $request, $param)
     {
-    		$post = Post::find($id);
+    		//$post = Post::find($id);
+    		$post = Post::where('id', $param)->orWhere('slug', $param)->firstOrFail();
 			return view('edit', ["post" => $post]);	
 	}
 	
-	public function commitpost(PostRequest $request, $id)
+	public function commitpost(PostRequest $request, $param)
     {
-    	  $post = Post::find($id);
+    	  //$post = Post::find($id);
+    	  $post = Post::where('id', $param)->orWhere('slug', $param)->firstOrFail();
     	  if (Gate::allows('update-post', $post))
     	  {
 			  $post->edit($request->all());

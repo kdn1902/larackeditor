@@ -20,13 +20,13 @@
                 		<tr><td colspan='2'></td></tr>
                 		<tr class='info'
                 		@can('update', $post)
-                			onclick="window.location.href='/edit/{{$post->id}}'"
+                			onclick="window.location.href='/edit/{{$post->slug}}'"
 						@endcan
 						>
                     	<td>{!! $post->user->name !!}</td><td>{{ $post->title }}</td></tr>
                     	<tr class="active"
                     	@can('update', $post)
-                    	 	onclick="window.location.href='/edit/{{$post->id}}'" 
+                    	 	onclick="window.location.href='/edit/{{$post->slug}}'" 
                     	@endcan
                     	 >
     					<td colspan='2'>{!! $post->post !!}</td></tr>
