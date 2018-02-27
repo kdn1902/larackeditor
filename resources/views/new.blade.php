@@ -33,7 +33,7 @@
                     <form method="post" role="form">
                     <div class="form-group">
                     	{{ csrf_field() }}
-                    	<input type="text" class="form-control" id="title" name="title" placeholder="Название статьи" value="{{old('title')}}">
+                    	<input required type="text" class="form-control" id="title" name="title" placeholder="Название статьи" value="{{old('title')}}">
                     	<textarea name="post" id="editor">{!! old('post') !!} 
 	                	</textarea>
 	                	<input type="submit" value="Отправить" class="btn btn-primary">

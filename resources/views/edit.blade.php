@@ -26,7 +26,7 @@
                     <form method="post" role="form">
                     <div class="form-group">
                     	{{ csrf_field() }}
-                    	<input type="text" class="form-control" id="title" name="title" placeholder="Название статьи" value="{{ old('title', $post->title) }}">
+                    	<input type="text" class="form-control" id="title" name="title" placeholder="Название статьи" value="{{ old('title', $post->title) }}" required>
                     	<textarea name="post" id="editor">{!! old('post', $post->post) !!}
 	                	</textarea>
 	                	<input type="submit" value="Сохранить" class="btn btn-primary">
